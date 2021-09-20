@@ -1,0 +1,36 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Sep 8, 2021, 9:15:24 PM
+    Author     : nguye
+*/
+
+@charset "utf-8";
+/* CSS Document */
+footer{
+    width: 100%;
+    height: 200px;
+    background-color: #433b3b;
+}
+.footerLeft{
+	width: 50%;
+	height: 200px;
+	float: left;
+}
+.footerRight{
+	width: 50%;
+	height: 200px;
+	float: right;
+}
+ul{
+	list-style-type: square;
+	padding-top: 20px;
+}
+li{
+        color: #c8ac61;
+	font-size: 18px;
+	line-height: 30px;
+}
