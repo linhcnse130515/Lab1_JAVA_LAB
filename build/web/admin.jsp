@@ -19,7 +19,10 @@
         <nav>
             <div class="navi">
                 <a href="index.jsp" a>HOME</a>
-                <a href="products.jsp">PRODUCTS</a>
+                <c:url var="search" value="MainController">
+                    <c:param name="btnAction" value="Search"></c:param>
+                </c:url>
+                <a href="${search}">PRODUCTS</a>
                 <a href="tracking.jsp" a>TRACKING</a>
                 <c:if test="${empty sessionScope.USER}">
                     <a href="login.jsp" a>LOGIN</a>

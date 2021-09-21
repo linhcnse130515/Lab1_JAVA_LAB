@@ -96,11 +96,6 @@
             <c:param name="btnAction" value="Check Out"></c:param>
         </c:url>
         <a href="${checkOut}">Check out</a>
-        <c:url var="checkOutPaypal" value="MainController">
-            <c:param name="txtAddress" value="${param.txtAddress}"></c:param>
-            <c:param name="btnAction" value="Check Out Paypal"></c:param>
-        </c:url>
-        <a href="${checkOutPaypal}">Check out by Paypal</a>
         <c:if test="${not empty requestScope.ORDERID}">
             Your Order Id: ${requestScope.ORDERID}
         </c:if>

@@ -326,7 +326,7 @@ public class CakeDAO implements Serializable{
         }
     }
 
-    public int getTotalPageSearch(String txtSearch, String txtCategory, double fromMoney, double toMoney) throws SQLException, NamingException {
+    public int getTotalPageSearch(String txtSearch, String category, double fromMoney, double toMoney) throws SQLException, NamingException {
         int count = 0;
         try {
             conn = DBUtils.getConnection();
@@ -334,8 +334,7 @@ public class CakeDAO implements Serializable{
                 String sql = GET_TOTAL_PAGE_SEARCH;
                 pre = conn.prepareStatement(sql);
                 pre.setString(1, "%" + txtSearch + "%");
-                String cate = txtCategory.equals("All") ? "" : txtCategory;
-                pre.setString(2, "%" + cate + "%");
+                pre.setString(2, "%" + category + "%");
                 pre.setDouble(3, fromMoney);
                 pre.setDouble(4, toMoney);
                 rs = pre.executeQuery();

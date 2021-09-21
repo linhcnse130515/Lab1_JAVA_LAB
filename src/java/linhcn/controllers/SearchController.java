@@ -40,22 +40,24 @@ public class SearchController extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try {
             String searchName = request.getParameter("searchName");
+            String name = searchName == null ? "" : searchName;
             String searchCategory = request.getParameter("rsCategory");
+            String category = (searchCategory == null || searchCategory.equals("All")) ? "" : searchCategory;
 
             String fMoney = request.getParameter("from");
-            double fromMoney = !"".equals(fMoney) ? Double.parseDouble(fMoney) : 0;
+            double fromMoney = (fMoney != null && !"".equals(fMoney)) ? Double.parseDouble(fMoney) : 0;
 
             String tMoney = request.getParameter("to");
-            double toMoney = !"".equals(fMoney) ? Double.parseDouble(tMoney) : Double.MAX_VALUE;
+            double toMoney = (tMoney != null && !"".equals(tMoney)) ? Double.parseDouble(tMoney) : Double.MAX_VALUE;
 
             String txtPage = request.getParameter("page");
             int page = txtPage != null ? Integer.parseInt(txtPage) : 1;
             CakeDAO dao = new CakeDAO();
-            int pages = dao.getTotalPageSearch(searchName, searchCategory, fromMoney, toMoney);
-            List<CakeDTO> list = dao.searchCakes(searchName, searchCategory, fromMoney, toMoney, page);
+            int pages = dao.getTotalPageSearch(name, category, fromMoney, toMoney);
+            List<CakeDTO> list = dao.searchCakes(name, category, fromMoney, toMoney, page);
 
             request.setAttribute("SEARCHNAME", searchName);
-            request.setAttribute("SEARCHCATEGORY", searchCategory);
+            request.setAttribute("SEARCHCATEGORY", category);
             request.setAttribute("FROMMONEY", fMoney);
             request.setAttribute("TOMONEY", tMoney);
             request.setAttribute("LIST", list);

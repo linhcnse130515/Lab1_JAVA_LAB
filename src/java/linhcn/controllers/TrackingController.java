@@ -50,7 +50,7 @@ public class TrackingController extends HttpServlet {
             HttpSession session = request.getSession();
             UserDTO user = (UserDTO) session.getAttribute("USER");
             OrderDTO orderDTO;
-            if (user.getUserID().equals("Admin")) {
+            if (user.getRole().equals("Admin")) {
                 orderDTO = orderDAO.searchOrderbyAdmin(searchOrder);
             } else {
                 orderDTO = orderDAO.searchOrderbyUser(searchOrder, user.getUserID());
