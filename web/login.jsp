@@ -54,7 +54,7 @@
                 <input type="submit" name="btnAction" value="Login">
                 <input type="reset" name="reset">
             </form>
-            <a href="https://accounts.google.com/o/oauth2/auth?scope=email&redirect_uri=http://localhost:8084/YellowMoonShop/MainController?btnAction=LoginGmail&response_type=code
+            <a href="https://accounts.google.com/o/oauth2/auth?scope=email&redirect_uri=http://localhost:8080/YellowMoonShop/MainController?btnAction=LoginGmail&response_type=code
                &client_id=976519729204-b8sdfs891eeu4c18beajv7912qffd99p.apps.googleusercontent.com&approval_prompt=force">Login With Google</a></br>
             ${requestScope.MESSAGE}
         </div>  
