@@ -23,7 +23,7 @@ import linhcn.utils.DBUtils;
  *
  * @author nguye
  */
-public class CakeDAO implements Serializable{
+public class CakeDAO implements Serializable {
 
     Connection conn;
     PreparedStatement pre;

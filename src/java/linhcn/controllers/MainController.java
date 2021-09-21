@@ -58,7 +58,7 @@ public class MainController extends HttpServlet {
             UserDTO user = (UserDTO) session.getAttribute("USER");
             session.setAttribute("CATEGORIES", categories);
             if (btn == null) {
-                success = "login.jsp";
+                success = "home.jsp";
             } else if (btn.equals("Login")) {
                 success = LOG_IN;
             } else if (btn.equals("Logout")) {

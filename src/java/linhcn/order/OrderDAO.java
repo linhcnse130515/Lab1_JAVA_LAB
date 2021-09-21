@@ -21,7 +21,7 @@ import linhcn.utils.DBUtils;
  *
  * @author nguye
  */
-public class OrderDAO implements Serializable{
+public class OrderDAO implements Serializable {
 
     Connection conn = null;
     PreparedStatement stm = null;
@@ -36,7 +36,7 @@ public class OrderDAO implements Serializable{
 
     private final String GET_ORDER_ADMIN = "SELECT OrderID, UserName, OrderDate, PaymentMethod, PaymentStatus, ShippingAddress "
             + "FROM Orders WHERE OrderID = ? ";
-    
+
     private final String GET_CAKES = "SELECT CakesId, Amount "
             + "FROM OrderDetail WHERE OrderID = ?";
 
@@ -134,7 +134,7 @@ public class OrderDAO implements Serializable{
         }
         return result;
     }
-    
+
     public OrderDTO searchOrderbyAdmin(int orderId) throws SQLException {
         OrderDTO result = null;
         conn = null;
